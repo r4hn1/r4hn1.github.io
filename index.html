@@ -1,24 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <script type="text/javascript" src="/lightgallery/lightbox.js" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hack The Box Writeup | r4hn1</title>
-    <meta name="generator" content="Jekyll v4.1.0"/>
-    <meta property="og:title" content="r4hn1"/>
-    <meta name="author" content="Rahul"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta name="description" content="r4hn1.github.io - Hackthebox Writeups "/>
-    <meta property="og:description" content="r4hn1.github.io - Hackthebox Writeups"/>
-    <link rel="canonical" href="https://r4hn1.github.io/"/>
-    <meta property="og:url" content="https://r4hn1.github.io/"/>
-    <meta property="og:site_name" content="r4hn1"/>
-    <link rel="next" href="https://r4hn1.github.io/page2"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta property="twitter:title" content="r4hn1"/>
-    <meta name="twitter:site" content="@r4hn1"/>
-    <meta name="twitter:creator" content="@r4hn1"/>
-    <meta name="google-site-verification" content="glkRE58gMd4GoX3c4vCro5mLG_TqhA0q40tg9fzLO-4" />
-    </head>
-   </html>
+        <script type="text/javascript" src="/lightgallery/lightbox.js" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Hack The Box Writeup | r4hn1</title>
+        <meta name="generator" content="Jekyll v4.1.0"/>
+        <meta property="og:title" content="r4hn1"/>
+        <meta name="author" content="Rahul"/>
+        <meta property="og:locale" content="en_US"/>
+        <meta name="description" content="r4hn1.github.io - Hackthebox Writeups "/>
+        <meta property="og:description" content="r4hn1.github.io - Hackthebox Writeups"/>
+        <link rel="canonical" href="https://r4hn1.github.io/"/>
+        <meta property="og:url" content="https://r4hn1.github.io/"/>
+        <meta property="og:site_name" content="r4hn1"/>
+        <link rel="next" href="https://r4hn1.github.io/page2"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta property="twitter:title" content="r4hn1"/>
+        <meta name="twitter:site" content="@r4hn1"/>
+        <meta name="twitter:creator" content="@r4hn1"/>
+   <script type="application/ld+json">
+     {"@type":"WebSite","headline":"r4hn1.github.io","sameAs":["https://www.facebook.com/r4hn1/","https://github.com/r4hn1","https://www.facebook.com/r4hn1/","url":"https://r4hn1.github.io/","name":"r4hn1.github.io","description":"r4hn1 - HackTheBox Machine Writeups","@context":"https://schema.org"}
+</script>
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="cdn.jsdelivr.net">
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin>
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+<link rel="preload" as="style" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="/assets/css/home.css" as="style">
+<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/popper.js@1.15.0/dist/umd/popper.min.js" integrity="sha256-fTuUgtT7O2rqoImwjrhDgbXTKUwyxxujIMRIK7TbuNU=" crossorigin>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/lib/jquery-3.4.1.min.js"><\/script>');
+</script>
+<!--<script data-ad-client="ca-pub-5953572116989864" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.15.0/dist/umd/popper.min.js" integrity="sha256-fTuUgtT7O2rqoImwjrhDgbXTKUwyxxujIMRIK7TbuNU=" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous" async></script>
+<script src="/assets/js/dist/commons.js" async></script>
+<script src="/assets/js/dist/timeago.min.js" async></script>
+<script src="/assets/js/dist/tooltip-loader.min.js" async></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NPW15J5VFG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NPW15J5VFG');
+</script>
+<link rel=”favicon” type=”image/ico” href=”https://r4hn1.github.io/favicon.ico” />
+</head>
+<body data-spy="scroll" data-target="#toc">
+    <div id="sidebar" class="d-flex flex-column">
+        <div id="nav-wrapper">
+            <div id="profile-wrapper" class="d-flex flex-column">
+                <div id="avatar" class="d-flex justify-content-center">
+                    <a href="/" alt="avatar">
+                        <img src="/assets/img/sample/avater1.png" alt="avatar">
+                    </a>
+                </div>
+                <div class="profile-text mt-3">
+                    <div id="site-title">
+                        <a href="/">r4hn1.github.io</a>
+                    </div>
+                    <div id="site-subtitle" class="font-italic">HackTheBox Writeup</div>
+                </div>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item d-flex justify-content-center active">
+                    <a href="/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-home ml-3 mr-3 unloaded"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/donation/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fab fa-donate ml-3 mr-3 unloaded"></i>
+                        <span>DONATION</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/categories/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-stream ml-3 mr-3 unloaded"></i>
+                        <span>CATEGORIES</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/tags/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-tags ml-3 mr-3 unloaded"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/archives/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-archive ml-3 mr-3 unloaded"></i>
+                        <span>TIMELINE</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/about/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-info ml-3 mr-3 unloaded"></i>
+                        <span>WHOAMI</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-bottom d-flex flex-wrap justify-content-around mt-4">
+            <span id="mode-toggle-wrapper">
+                <i class="mode-toggle fas fa-sun" light-mode-invisible></i>
+                <i class="mode-toggle fas fa-moon" dark-mode-invisible></i>
+                <script type="text/javascript">
+                    class ModeToggle {
+                        static get MODE_KEY() {
+                            return "mode";
+                        }
+                        static get DARK_MODE() {
+                            return "dark";
+                        }
+                        static get LIGHT_MODE() {
+                            return "light";
+                        }
+                        constructor() {
+                            if (this.mode != null) {
+                                if (this.mode == ModeToggle.DARK_MODE) {
+                                    if (!this.isDarkPrefer) {
+                                        this.setDark();
+                                    }
+                                } else {
+                                    if (this.isDarkPrefer) {
+                                        this.setLight();
+                                    }
+                                }
+                            }
+                            var self = this;
+                            /* always follow the system prefers */
+                            this.sysDarkPrefers.addListener(function() {
+                                if (self.mode != null) {
+                                    if (self.mode == ModeToggle.DARK_MODE) {
+                                        if (!self.isDarkPrefer) {
+                                            self.setDark();
+                                        }
+                                    } else {
+                                        if (self.isDarkPrefer) {
+                                            self.setLight();
+                                        }
+                                    }
+                                    self.clearMode();
+                                }
+                            });
+                        }
+                        /* constructor() */
+                        setDark() {
+                            $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+                            sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+                        }
+                        setLight() {
+                            $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+                            sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+                        }
+                        clearMode() {
+                            $('html').removeAttr(ModeToggle.MODE_KEY);
+                            sessionStorage.removeItem(ModeToggle.MODE_KEY);
+                        }
+                        get sysDarkPrefers() {
+                            return window.matchMedia("(prefers-color-scheme: dark)");
+                        }
+                        get isDarkPrefer() {
+                            return true;
+                        }
+                        get mode() {
+                            return sessionStorage.getItem(ModeToggle.MODE_KEY);
+                        }
+                        flipMode() {
+                            if ((this.mode == null && this.isDarkPrefer) || this.mode == ModeToggle.DARK_MODE) {
+                                this.setLight();
+                            } else {
+                                /* light mode or default-light */
+                                this.setDark();
+                            }
+                        }
+                    }
+                    /* ModeToggle */
+                    let toggle = new ModeToggle();
+                    $(".mode-toggle").click(function() {
+                        toggle.flipMode();
+                    });
+                </script>
+            </span>
+            <span class="icon-border"></span>
+<a href="https://github.com/r4hn1" target="_blank">
+    <i class="fab fa-github"></i>
+</a>
+<a href="https://t.me/r4hn1" target="_blank">
+    <i class="fab fa-telegram"></i>
+</a>
+<a href="https://twitter.com/r4hn1" target="_blank">
+    <i class="fab fa-twitter"></i>
+</a>
+<a href="https://www.facebook.com/r4hn1/" target="_blank"> <i class="fab fa-facebook"></i> </a>
+</div></div>
+<div id="main-wrapper">
+    <div id="topbar-wrapper" class="row justify-content-center topbar-down">
+        <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
+            <span id="breadcrumb">
+                <span>Posts</span>
+            </span>
+            <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+            <div id="topbar-title">r4hn1.github.io</div>
+            <i id="search-trigger" class="fas fa-search fa-fw"></i>
+            <span id="search-wrapper" class="align-items-center">
+                <i class="fas fa-search fa-fw"></i>
+                <input class="form-control" id="search-input" type="search" placeholder="Search...">
+                <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
+            </span>
+            <span id="search-cancel">Cancel</span>
+        </div>
+    </div>
+    <div id="main">
+        <div class="row">
+            <div class="col-12 col-lg-11 col-xl-8">
+                <div id="page" class="post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 pl-xl-3 mb-md-4">
+                    <div id="post-list">
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/pikaboo/">Hackthebox Pikaboo writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/pikaboo/">
+                                    <img src="https://i.imgur.com/1Fd6l4z.png" alt="Pikaboo writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Tue, Jul 20, 2021, 12:00 AM +0000">
+                                    Jul 20, 2021 <i class="unloaded">2021-07-20T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/seal/">Hackthebox Seal writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/seal/">
+                                    <img src="https://i.imgur.com/0OxTAYp.png" alt="Seal writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Sun, Jul 11, 2021, 12:00 AM +0000">
+                                    Jun 11, 2021 <i class="unloaded">2021-07-11T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/monitors/">Hackthebox Monitors writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/monitors/">
+                                    <img src="https://i.imgur.com/ZQAkYeH.png" alt="Monitors writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Mon, Jun 28, 2021, 12:00 AM +0000">
+                                    Jun 28, 2021 <i class="unloaded">2021-06-28T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/explore/">Hackthebox Explore writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/explore/">
+                                    <img src="https://i.imgur.com/pA94jzD.png" alt="Explore writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Sun, Jun 27, 2021, 12:00 AM +0000">
+                                    Jun 27, 2021 <i class="unloaded">2021-06-27T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/dynstr">Hackthebox dynstr writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/dynstr/">
+                                    <img src="https://i.imgur.com/ya8hcuz.png" alt="dynstr writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Mon, Jun 14, 2021, 12:00 AM +0000">
+                                    Jun 14, 2021 <i class="unloaded">2021-06-14T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/pit/">Hackthebox Pit writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/pit/">
+                                    <img src="https://i.imgur.com/Jztmit3.png" alt="Pit writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Sat, Jun 10, 2021, 12:00 AM +0000">
+                                    Jun 10, 2021 <i class="unloaded">2021-06-10T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/thenotebook/">Hackthebox TheNotebook writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/thenotebook/">
+                                    <img src="https://i.imgur.com/7FtkxYQ.png" alt="TheNotebook writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Wed, Jun 09, 2021, 12:00 AM +0000">
+                                    Jun 09, 2021 <i class="unloaded">2021-06-09T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/cap/">Hackthebox Cap writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/cap/">
+                                    <img src="https://i.imgur.com/PkHv7G2.png" alt="Cap writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Sun, Jun 06, 2021, 12:00 AM +0000">
+                                    Jun 06, 2021 <i class="unloaded">2021-06-06T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/schooled/">Hackthebox Schooled writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/schooled">
+                                    <img src="https://i.imgur.com/Snn7iSm.png" alt="Schooled writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Sun, Jun 06, 2021, 12:00 AM +0000">
+                                    Jun 06, 2021 <i class="unloaded">2021-06-06T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="post-preview">
+                            <h1>
+                                <a href="/posts/htb/ophiuchi/">Hackthebox Ophiuchi writeup</a>
+                            </h1>
+                            <div class="post-content">
+                                <a href="/posts/htb/ophiuchi">
+                                    <img src="https://i.imgur.com/1fyb8lN.png" alt="Ophiuchi writeup">
+                                </a>
+                                <p>This machine is currently active on hackthebox wait until it gets retired or if you have owned it then you need to get the Administrator NTLM hash or the root password hash from the file /etc/shadow file.And enjoy the writeup.</p>
+                            </div>
+                            <div class="post-meta text-muted pt-1">
+                                <i class="far fa-clock fa-fw"></i>
+                                <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Fri, Jun 04, 2021, 12:00 AM +0000">
+                                    Jun 04, 2021 <i class="unloaded">2021-06-04T00:00:00+00:00</i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="pagination mt-4 mb-0 pl-lg-2">
+                        <li class="page-item active">
+                            <a class="page-link btn-box-shadow" href="/">1</a>
+                        </li>
+                        <li class="page-item ">
+                            <a class="page-link btn-box-shadow" href="/page2/">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link btn-box-shadow" href="/page2">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- The Pannel on right side (Desktop views) v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
+            <div id="panel-wrapper" class="col-xl-3 pl-2 topbar-down">
+                <div class="access">
+                    <div id="access-lastmod" class="post mb-4">
+                        <h3 data-toc-skip>Recent Update</h3>
+                        <ul id="Recent-Updates" class="post-content pl-0 pb-1 ml-1 mt-2">
+                        </ul>
+                    </div>
+                    <!--<div id="access-tags">
+                        <script async="async" data-cfasync="false" src="//contributorshaveangry.com/12712f6b55ac81fa45e77d0da10aee84/invoke.js"></script>
+                        <div id="container-12712f6b55ac81fa45e77d0da10aee84"></div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-11 col-xl-8">
+                <div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"></div>
+            </div>
+        </div>
+        <!-- The Footer v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
+        <footer class="d-flex w-100 justify-content-center">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="footer-left">
+</p></div>
+<p class="mb-0">
+    © <span id="year"></span> <a href="https://www.facebook.com/r4hn1/">r4hn1.github.io</a>
+    . <span data-toggle="tooltip" data-placement="top" title="The blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.">All rights reserved.</span>
+<script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="DEDINFOSEC88" data-description="Support me on Buy me a coffee!" data-message="Like The Blog? Support Me!" data-color="#FFDD00" data-position="right" data-x_margin="18" data-y_margin="18"></script>
+</footer></div>
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+    <div class="col-12 col-xl-11 post-content">
+       <!-- <div id="search-hints">
+            <h4 class="text-muted">Trending Tags</h4>
+            <a class="post-tag" href="/tags/cve/">CVE</a>
+            <a class="post-tag" href="/tags/linpeas/">LinPEAS</a>
+            <a class="post-tag" href="/tags/mysql-backdoor/">MySQL Backdoor</a>
+            <a class="post-tag" href="/tags/server-side-template-injection/">Server-Side Template Injection</a>
+            <a class="post-tag" href="/tags/ftp/">FTP</a>
+            <a class="post-tag" href="/tags/sireprat/">SirepRAT</a>
+            <a class="post-tag" href="/tags/jackson/">Jackson</a>
+            <a class="post-tag" href="/tags/gtfobins/">GTFO-Bins</a>
+            <a class="post-tag" href="/tags/pypi-server/">pypi-server</a>
+            <a class="post-tag" href="/tags/email-extractor/">email-extractor</a>
+        </div>-->
+        <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+    </div>
+</div>
+</div><div id="mask"></div>
+<a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
+    <i class="fas fa-angle-up"></i>
+</a>
+<!-- Jekyll Simple Search loader v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js" integrity="sha256-qcLR00zq6pJk4je3MLgAri8Nn+ZumUlXgTKR2H/xCY0=" crossorigin="anonymous"></script>
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/assets/data/search.json',
+        searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://r4hn1.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>',
+        noResultsText: '<p class="mt-5">Sorry! No result founds.</p>'
+    });
+</script>
+<script>
+        $(document).ready(function(){
+            $('#year').text(new Date().getFullYear());
+        });
+</script>
+<script type="module" src="/components/Update.js"></script>
+</body>
+</html>
